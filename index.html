@@ -12,7 +12,18 @@
               content="HELIX DRIFT, a nine year aerial and rooftop photographic archive of Hong Kong, wound on a single spool.">
 <script>
 window._iub = window._iub || [];
-_iub.csConfiguration = { localConsentDomain: 'mb-iub-cnstmngr.github.io' };
+_iub.csConfiguration = {
+  /*
+   * Store consent cookies on the exact host instead of the parent domain.
+   * github.io is on the Public Suffix List, so browsers reject cookies set
+   * on ".github.io". Without this, the TCF "euconsent-v2" cookie is dropped
+   * ("rejected for invalid domain"), no valid TC string survives a reload,
+   * and the cookie banner reappears after every refresh.
+   * Only needed on public-suffix hosts (github.io, netlify.app, vercel.app,
+   * herokuapp.com...); can be removed if the site moves to its own domain.
+   */
+  localConsentDomain: 'mb-iub-cnstmngr.github.io'
+};
 </script>      
 <!-- New snippet for Privacy Controls and Cookie Solution -->
       <script type="text/javascript" src="https://embeds.iubenda.com/widgets/81bf8670-7b11-4cb5-84f0-df79301432b9.js"></script>      
